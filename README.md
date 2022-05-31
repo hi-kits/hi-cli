@@ -1,5 +1,5 @@
 <div align="center">
-<img src="logo.svg" alt="KITS" width="300" >
+<img src="logo.png" alt="KITS" width="300" >
 
 ### a UI based on web compoents.
 # hi-kit
