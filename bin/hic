@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+console.log('hi cli is start working.....')
+
+const program = require('commander')
+const init = require('../lib/create')
+const updateChk = require('../lib/upgrade')
+// 显示版本
+program.version(require('../package').version, '-v', '--version')
+// 添加init命令，简写是i， <name> 是参数  action回调里可以拿到, 如果是一个
+program
+    .command('create <name>')
+    .description('hi cli 项目初始化工具')
+    .action(name => {
+        console.log(name);
+        init(name)
+    })
+program
+    .command('upgrade')
+    .description('check the hi cli version')
+    .action(name => {
+        updateChk()
+    })
+    // 解析参数
+program.parse(process.argv)
